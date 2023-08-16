@@ -19,12 +19,7 @@ public final class KeepIndividualSpigot extends JavaPlugin {
         selfperm = getConfig().getBoolean("selfperm");
 
         getServer().getPluginManager().registerEvents(new DeathListener(), this);
-        this.getCommand("KI_add").setExecutor(new CommandAdd());
-        this.getCommand("KI_remove").setExecutor(new CommandRemove());
-        this.getCommand("KI_list").setExecutor(new CommandList());
-        this.getCommand("KI_addself").setExecutor(new CommandAddSelf());
-        this.getCommand("KI_removeself").setExecutor(new CommandRemoveSelf());
-        this.getCommand("KI_toggleself").setExecutor(new CommandToggleSelf());
+        this.getCommand("KI").setExecutor(new CommandKI());
     }
 
     @Override

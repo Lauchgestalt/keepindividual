@@ -1,9 +1,10 @@
 com\callmeperky\keepindividualspigot\CommandList.class
-com\callmeperky\keepindividualspigot\DeathListener.class
 com\callmeperky\keepindividualspigot\CommandToggleSelf.class
 com\callmeperky\keepindividualspigot\KeepIndividualSpigot.class
-com\callmeperky\keepindividualspigot\CommandAdd.class
 com\callmeperky\keepindividualspigot\CommandAddSelf.class
 com\callmeperky\keepindividualspigot\CommandRemoveSelf.class
 com\callmeperky\keepindividualspigot\CommandRemove.class
 com\callmeperky\keepindividualspigot\CommandKI.class
+com\callmeperky\keepindividualspigot\DeathListener.class
+com\callmeperky\keepindividualspigot\CommandToggle.class
+com\callmeperky\keepindividualspigot\CommandAdd.class
