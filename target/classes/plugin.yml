@@ -1,0 +1,27 @@
+name: KeepIndividualSpigot
+version: '1.0'
+main: com.callmeperky.keepindividualspigot.KeepIndividualSpigot
+api-version: '1.20'
+commands:
+  KI_add:
+    description: Add a player to the list of players to keep
+    usage: /<command> <player>
+    permission: keepindividualspigot.add
+  KI_remove:
+    description: Remove a player from the list of players to keep
+    usage: /<command> <player>
+    permission: keepindividualspigot.remove
+  KI_list:
+    description: List all players that are kept
+    usage: /<command>
+    permission: keepindividualspigot.list
+  KI_addself:
+    description: Add yourself to the list
+    usage: /<command>
+  KI_removeself:
+    description: Remove yourself from the list
+    usage: /<command>
+  KI_toggleself:
+    description: Toggle if players can add themselves to list
+    usage: /<command>
+    permission: keepindividualspigot.selfperm
