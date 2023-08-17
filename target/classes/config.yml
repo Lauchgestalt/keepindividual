@@ -1,2 +1,2 @@
-players:
-selfperm: false
+default: true
+firstRun: true

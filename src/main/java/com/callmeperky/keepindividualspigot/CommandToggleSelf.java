@@ -1,5 +1,6 @@
 package com.callmeperky.keepindividualspigot;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,8 +14,12 @@ public class CommandToggleSelf implements CommandExecutor {
         luckperms.hasPermission(commandSender.getName(), "keepinv.keep").thenAcceptAsync(
                 hasperm -> {
                     luckperms.setPermission(sender.getUniqueId(), "keepinv.keep", !hasperm);
-                    commandSender.sendMessage("Set your personal keepinventory rule to " + !hasperm);
-                    System.out.println("Set " + sender.getName() + "'s keepinventory rule to " + !hasperm);
+                    if(hasperm) {
+                        commandSender.sendMessage("Set your personal keepinventory rule to " + ChatColor.RED + !hasperm);
+                    } else {
+                        commandSender.sendMessage("Set your personal keepinventory rule to " + ChatColor.GREEN + !hasperm);
+                    }
+                    System.out.println(sender.getName() + " set his own keepinventory rule to " + !hasperm);
                 }
         );
         return true;
