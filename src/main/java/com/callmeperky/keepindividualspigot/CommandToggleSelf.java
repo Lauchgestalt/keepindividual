@@ -11,6 +11,10 @@ public class CommandToggleSelf implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         Player sender = commandSender.getServer().getPlayer(commandSender.getName());
+        if(!commandSender.hasPermission("keepinv.allowself")) {
+            commandSender.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+            return true;
+        }
         luckperms.hasPermission(commandSender.getName(), "keepinv.keep").thenAcceptAsync(
                 hasperm -> {
                     luckperms.setPermission(sender.getUniqueId(), "keepinv.keep", !hasperm);

@@ -28,14 +28,12 @@ public class CommandKI implements CommandExecutor, TabCompleter {
                 return new CommandToggle().onCommand(commandSender, command, s, strings);
             case "list":
                 return new CommandList().onCommand(commandSender, command, s, strings);
-            case "setdefault":
-                return new CommandSetDefault(plugin).onCommand(commandSender, command, s, strings);
             case "help":
                 commandSender.sendMessage(ChatColor.GREEN + "Commands:");
                 commandSender.sendMessage("/ki toggleself");
                 commandSender.sendMessage("/ki toggle <player>");
                 commandSender.sendMessage("/ki list");
-                commandSender.sendMessage("/ki setdefault <true/false>");
+                commandSender.sendMessage("/ki help");
                 return true;
             default:
                 commandSender.sendMessage(ChatColor.RED + "Unknown command. Use /ki help for help.");
@@ -50,7 +48,6 @@ public class CommandKI implements CommandExecutor, TabCompleter {
             commands.add("toggleself");
             commands.add("toggle");
             commands.add("list");
-            commands.add("setdefault");
             commands.add("help");
             return commands;
         } else if (strings.length == 2){
@@ -60,11 +57,6 @@ public class CommandKI implements CommandExecutor, TabCompleter {
                     players.add(player.getName());
                 }
                 return players;
-            } else if(Objects.equals(strings[0], "setdefault")){
-                List<String> bools = new ArrayList<>();
-                bools.add("true");
-                bools.add("false");
-                return bools;
             } else {
                 return null;
             }

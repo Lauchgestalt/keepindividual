@@ -3,6 +3,5 @@ com\callmeperky\keepindividualspigot\JoinListener.class
 com\callmeperky\keepindividualspigot\DeathListener.class
 com\callmeperky\keepindividualspigot\CommandToggle.class
 com\callmeperky\keepindividualspigot\CommandToggleSelf.class
-com\callmeperky\keepindividualspigot\CommandSetDefault.class
 com\callmeperky\keepindividualspigot\KeepIndividualSpigot.class
 com\callmeperky\keepindividualspigot\CommandKI.class
