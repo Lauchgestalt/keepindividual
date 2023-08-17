@@ -1,5 +1,6 @@
 package com.callmeperky.keepindividualspigot;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -40,7 +41,9 @@ public class DeathListener implements Listener {
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event){
+        String deathMessage = event.getDeathMessage();
         event.setDeathMessage(deathMessages.get((int) (Math.random() * deathMessages.size())).replace("%player%", event.getEntity().getName()));
+        Bukkit.broadcastMessage(deathMessage);
         boolean perm = luckperms.api.getUserManager().getUser(event.getEntity().getUniqueId()).getCachedData().getPermissionData().checkPermission("keepinv.keep").asBoolean();
         if(perm){
             event.setKeepInventory(true);
